@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const CompleteButton = ({ action, value }) => {
-    console.log(value);
     return (
         <form className="completed-checkbox">
             <input
