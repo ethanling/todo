@@ -1,0 +1,300 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #2d2d2d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    color: #f2f2f2;
+    
+}
+
+nav {
+    width: 100vw;
+    display: block;
+    height: 25vh;
+    color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.nav-container {
+    height: 100px;
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo-container {
+    height: 60px;
+    position: relative;
+    flex: 1;
+}
+
+.logo {
+    font-size: 60px;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    transition: all .8s ease; 
+    position: absolute;
+}
+
+.logo-hide {
+    transform: translateY(-200px);
+}
+
+.App {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    width: 60vw;
+    margin-bottom: 100px;
+    flex: 1;
+}
+
+.list {
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+.list li {
+    padding: 20px 25px 20px 25px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.empty-list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #999;
+}
+
+.task-text {
+    flex: 1;
+}
+
+.completed-task {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.add-task {
+    position: relative;
+}
+
+.add-task input:focus + label,
+.add-task input:valid label {
+    opacity: 0;
+}
+
+.add-task label {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 20px;
+    cursor: text;
+}
+
+.add-task input {
+    margin-top: -1px;
+    padding: 20px 25px 20px 25px;
+    background: none;
+    border: none;
+    /* border-bottom: 6px solid #010101; */
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    z-index: 0;
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 2px 5px 0px #1d1d1d;
+}
+
+.add-task input:focus {
+    background-color: #e9e9e9;
+}
+
+.add-task button {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: none;
+    color: #2d2d2d;
+    font-weight: bold;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    height: 55px;
+    width: 55px;
+    outline: none;
+}
+
+.add-task button:hover {
+    transform: scale(1.4);
+}
+
+.add-task button:active {
+    transform: scale(0.7);
+}
+
+/* Complete task button */
+input[type=checkbox] { 
+    visibility: hidden; 
+} 
+
+.completed-checkbox {
+    width: 25px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.completed-checkbox label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:1px solid #bbb;
+    transition: all .2s ease;
+}
+
+.completed-checkbox label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+}
+
+.completed-checkbox label:hover {
+    box-shadow: 0px 0px 5px 0px #999;
+}
+
+.completed-checkbox input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+
+/* Delete task button */
+.delete-button-container {
+    outline: none;
+}
+
+.delete-button {
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.delete-button-icon {
+    display: inline;
+}
+
+.display-button:active {
+    transform: scale(1.2);
+}
+
+/* Show delete button when task is hovered over */
+.list li:hover .delete-button {
+    opacity: .75;
+}
+
+
+/* Progress Cirlce */
+.percentage-circle {
+    transition: opacity .8s ease;
+}
+
+.circle-background,
+.circle-progress {
+    fill: none;
+    transition: all 0.4s ease;
+}
+
+.circle-background {
+    stroke: #000000;
+}
+
+.circle-progress {
+    stroke: #f2f2f2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cirlce-no-progress {
+    stroke: #2d2d2d;
+}
+
+.circle-text {
+    font-size: 14px;
+    font-weight: bold;
+    fill: #f2f2f2;
+}
