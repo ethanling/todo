@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const CompleteButton = ({ action, value }) => {
     return (
@@ -8,11 +8,10 @@ const CompleteButton = ({ action, value }) => {
                 name=""
                 value={value}
                 type="checkbox"
-                onClick={action}
             />
-            <label htmlFor={`checkbox-${value}`}></label>
+            <label onClick={action} htmlFor={`checkbox-${value}`}></label>
         </form>
     );
-}
+};
 
 export default CompleteButton;

@@ -45,7 +45,7 @@ nav {
     width: 60vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     overflow: hidden;
 }
 
@@ -53,6 +53,7 @@ nav {
     height: 60px;
     position: relative;
     flex: 1;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -306,5 +307,8 @@ input[type=checkbox] {
   }
   .nav-container {
       width: 100vw;
+  }
+  .logo {
+      font-size: 50px;
   }
 }
