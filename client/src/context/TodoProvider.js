@@ -55,8 +55,13 @@ const TodoProvider = props => {
     const handleDeleteTask = id => {
         // Finds task to be deleted and removes it from state array
         const newState = list.todos.filter(task => id !== task.id);
+        // Checks to see if the task is completed so as to corrent percentage completed
+        const currentTask = list.todos.filter(task => id === task.id);
+        const isCompleted = currentTask[0].completed
+        console.log(isCompleted);
         setList({todos: newState});
-        if (completedNum) {
+        
+        if (completedNum && isCompleted) {
             setCompletedNum(completedNum - 1);
         }
     }
