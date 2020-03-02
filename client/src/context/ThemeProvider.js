@@ -6,19 +6,27 @@ import React, { useState, useEffect } from 'react';
 const themes = {
     dawn: {
         backgroundImage:
-            "linear-gradient(179.4deg, rgba(255,145,113,1) -16.9%, rgba(130,156,255,1) 119.9%)"
+            "linear-gradient(179.4deg, rgba(255,145,113,1) -16.9%, rgba(130,156,255,1) 119.9%)",
+        navGrad:
+            "rgba(130,156,255,1)"
     },
     day: {
         backgroundImage:
-            "linear-gradient( 179.4deg,  rgba(111,214,255,1) -16.9%, rgba(75,68,255,1)119.9% )"
+            "linear-gradient( 179.4deg,  rgba(111,214,255,1) -16.9%, rgba(75,68,255,1)119.9% )",
+        navGrad:
+            "linear-gradient( 179.4deg,  rgba(75,68,255,1) -16.9%, rgba(111,214,255,1)119.9% )"
     },
     dusk: {
         backgroundImage:
-            "linear-gradient( 179.4deg,  rgba(12,20,69,1) -16.9%, rgba(71,30,84,1) 119.9% )"
+            "linear-gradient( 179.4deg,  rgba(12,20,69,1) -16.9%, rgba(71,30,84,1) 119.9% )",
+        navGrad:
+            "linear-gradient( 179.4deg,  rgba(71,30,84,1) -16.9%, rgba(12,20,69,1)119.9% )"
     },
     night: {
         backgroundImage:
-            "linear-gradient( 179.4deg,  rgba(0,17,24,1) -16.9%, rgba(79,77,136,1)119.9% )"
+            "linear-gradient( 179.4deg,  rgba(0,17,24,1) -16.9%, rgba(79,77,136,1)119.9% )",
+        navGrad:
+            "linear-gradient( 179.4deg,  rgba(79,77,136,1) -16.9%, rgba(0,17,24,1)119.9% )"
     }
 };
 
